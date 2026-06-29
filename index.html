@@ -1,120 +1,343 @@
 <!DOCTYPE html>
 
-<html lang="en">
-<head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VERDO | Fresh Moments. Every Day.</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb2be",
+                        "outline": "#6f7a6b",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1c1a",
+                        "background": "#fbf9f5",
+                        "surface-container-high": "#eae8e4",
+                        "on-tertiary-fixed": "#400014",
+                        "primary-container": "#4caf50",
+                        "surface-bright": "#fbf9f5",
+                        "on-primary-fixed-variant": "#005313",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1b1c1a",
+                        "on-primary-fixed": "#002204",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#900038",
+                        "surface-container-highest": "#e4e2de",
+                        "secondary-fixed-dim": "#b6cbc5",
+                        "outline-variant": "#becab9",
+                        "on-secondary-fixed": "#0c1f1b",
+                        "primary-fixed": "#94f990",
+                        "on-secondary-container": "#556864",
+                        "surface-container": "#efeeea",
+                        "inverse-surface": "#30312e",
+                        "inverse-primary": "#78dc77",
+                        "on-secondary-fixed-variant": "#384a46",
+                        "on-tertiary-container": "#6b0027",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f5f3ef",
+                        "surface": "#fbf9f5",
+                        "secondary-fixed": "#d2e7e1",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffd9de",
+                        "tertiary-container": "#ff678a",
+                        "surface-dim": "#dbdad6",
+                        "on-primary-container": "#003c0b",
+                        "primary": "#006e1c",
+                        "inverse-on-surface": "#f2f0ed",
+                        "secondary-container": "#d2e7e1",
+                        "primary-fixed-dim": "#78dc77",
+                        "tertiary": "#bc004b",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#4f625e",
+                        "surface-tint": "#006e1c",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e4e2de",
+                        "on-surface-variant": "#3f4a3c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "container-max": "1280px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Public Sans"],
+                        "label-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "display-lg-mobile": ["Public Sans"],
+                        "display-lg": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.25", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.15", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
 <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #000;
-    }
-  </style>
+        body {
+            background-color: #fbf9f5;
+            color: #1b1c1a;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+        }
+        .organic-shadow {
+            box-shadow: 0 10px 40px rgba(46, 125, 50, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
 </head>
-<body>
-<!-- STITCH_SHADER_START:ANIMATION_2 class="fixed inset-0 w-full h-full" -->
-<div class="fixed inset-0 w-full h-full" style="display:block;">
-<canvas id="shader-canvas-ANIMATION_2" style="display:block;width:100%;height:100%"></canvas>
-<script>
-(function() {
-  const canvas = document.getElementById('shader-canvas-ANIMATION_2');
-
-  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
-  // This fires on initial layout and whenever the element is resized.
-  function syncSize() {
-    const w = canvas.clientWidth  || 1280;
-    const h = canvas.clientHeight || 720;
-    if (canvas.width !== w || canvas.height !== h) {
-      canvas.width  = w;
-      canvas.height = h;
-    }
-  }
-  if (typeof ResizeObserver !== 'undefined') {
-    new ResizeObserver(syncSize).observe(canvas);
-  }
-  syncSize();
-
-  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
-  if (!gl) return;
-  const vs = `attribute vec2 a_position;
-varying vec2 v_texCoord;
-void main() {
-  v_texCoord = a_position * 0.5 + 0.5;
-  gl_Position = vec4(a_position, 0.0, 1.0);
-}`;
-  const fs = `precision highp float;
-uniform float u_time;
-uniform vec2 u_resolution;
-varying vec2 v_texCoord;
-
-void main() {
-    vec2 uv = v_texCoord;
-    
-    // Create a soft, flowing organic gradient background
-    // Using mint, sage, and warm white tones
-    vec3 color1 = vec3(0.886, 0.969, 0.945); // Fresh Mint
-    vec3 color2 = vec3(0.992, 0.984, 0.969); // Warm White
-    vec3 color3 = vec3(0.820, 0.910, 0.886); // Soft Sage
-    
-    float noise = sin(uv.x * 3.0 + u_time * 0.2) * cos(uv.y * 2.0 - u_time * 0.3);
-    noise += sin(uv.y * 4.0 + u_time * 0.4) * cos(uv.x * 5.0 + u_time * 0.1);
-    
-    vec3 color = mix(color1, color2, uv.x + noise * 0.1);
-    color = mix(color, color3, uv.y + noise * 0.1);
-    
-    gl_FragColor = vec4(color, 1.0);
-}`;
-  function cs(type, src) {
-    const s = gl.createShader(type);
-    gl.shaderSource(s, src);
-    gl.compileShader(s);
-    return s;
-  }
-  const prog = gl.createProgram();
-  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
-  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
-  gl.linkProgram(prog);
-  gl.useProgram(prog);
-  const buf = gl.createBuffer();
-  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
-  const pos = gl.getAttribLocation(prog, 'a_position');
-  gl.enableVertexAttribArray(pos);
-  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-  const uTime = gl.getUniformLocation(prog, 'u_time');
-  const uRes = gl.getUniformLocation(prog, 'u_resolution');
-  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
-
-  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
-  // Shaders that need normalized coords should use: u_mouse / u_resolution.
-  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
-  window.addEventListener('mousemove', (event) => {
-    const rect = canvas.getBoundingClientRect();
-    if (rect.width && rect.height) {
-      const nx = (event.clientX - rect.left) / rect.width;
-      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
-      mouse.x = nx * canvas.width;
-      mouse.y = ny * canvas.height;
-    }
-  });
-
-  function render(t) {
-    if (typeof ResizeObserver === 'undefined') syncSize();
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    if (uTime) gl.uniform1f(uTime, t * 0.001);
-    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
-    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    requestAnimationFrame(render);
-  }
-  render(0);
-})();
-</script>
+<body class="font-body-md">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="flex justify-between items-center px-margin-mobile py-6 max-w-container-max mx-auto">
+<span class="font-headline-xl text-headline-xl tracking-tighter text-primary">VERDO</span>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary text-[28px]">shopping_basket</button>
+<button class="material-symbols-outlined text-primary text-[28px]">menu</button>
 </div>
-<!-- STITCH_SHADER_END:ANIMATION_2 -->
-</body>
-</html>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen min-h-[700px] flex flex-col justify-end overflow-hidden">
+<!-- Animated Shader Background Placeholder -->
+
+<div class="relative z-10 px-margin-mobile pb-24 space-y-8 animate-fade-in-up">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">
+                Fresh Moments.<br/>Every Day.
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[85%]">
+                Elevating your daily snacking with organic, premium produce delivered from the field to your hands.
+            </p>
+<div class="flex flex-col gap-4 pt-4">
+<button class="bg-primary text-on-primary font-label-md py-5 px-10 rounded-full text-center organic-shadow transition-transform active:scale-95">
+                    Shop Now
+                </button>
+<button class="bg-secondary-container text-on-secondary-container font-label-md py-5 px-10 rounded-full text-center transition-transform active:scale-95">
+                    Our Story
+                </button>
+</div>
+</div>
+<!-- Abstract Decoration -->
+<div class="absolute -right-20 bottom-10 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl z-0"></div>
+</section>
+<!-- Lifestyle Photography Section -->
+<section class="py-section-gap px-margin-mobile bg-white">
+<div class="max-w-container-max mx-auto">
+<div class="relative rounded-3xl overflow-hidden aspect-[3/4] organic-shadow">
+<img alt="Family picnic in a city park sharing Verdo snacks" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLuXoXWrdQiNPua4IofNH8GS7p1AjYqFxaCANjsyci-RIKIa6neYxItyQ_rGgW7CCeeV5ARf8ViJKkEtLT6CUU7YNz39o1AoH_nSGdc3zcVdWT1uAhg-1GDjEuL3n7wCFMNQNfEvAknadZZOb6D1NuSOStUvHpsyfPhqXFZyMgLqorY3JbxKXyNIL7JeoAIJW5j9zEEATtC-QDy9SMPFoLS_A2p2CjDa4BIylUG93Uft-RXQ0NzLIJS7Sg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8">
+<p class="font-headline-lg-mobile text-headline-lg-mobile text-white leading-tight">
+                        Rooted in real life.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy -->
+<section class="py-section-gap px-margin-mobile bg-surface-container-low">
+<div class="max-w-container-max mx-auto text-center space-y-6">
+<span class="inline-block py-1 px-4 bg-primary-fixed-dim text-on-primary-fixed-variant rounded-full text-xs font-bold tracking-widest uppercase">Philosophy</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Effortless Vitality</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm mx-auto">
+                We believe snacking shouldn't be a compromise. Verdo brings the farmer's market quality to your desk, your commute, and your home with zero friction.
+            </p>
+</div>
+</section>
+<!-- Product Showcase -->
+<section class="py-section-gap px-margin-mobile">
+<div class="max-w-container-max mx-auto space-y-10">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile">Our Seasonal Picks</h3>
+<span class="text-primary font-bold text-sm">View All</span>
+</div>
+<!-- Single-column Scrollable Products -->
+<div class="space-y-gutter">
+<!-- Cherry Tomatoes Card -->
+<div class="bg-white rounded-[2rem] p-8 organic-shadow flex flex-col gap-6">
+<div class="h-64 rounded-2xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="A macro close-up of vibrant red, orange, and yellow cherry tomatoes in a ceramic bowl. The lighting is soft morning sun from a nearby window, creating gentle highlights on the produce. The aesthetic is clean, high-end editorial, with a warm white and fresh mint color palette. Soft organic layering with minimal agricultural grit." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwK-1ArKjriJe8JIfzscdqjt-aXvMoruXDi6xz7LeCkwMTFyi6QJFYlZ_NM42HGVlum_CgDV76HYHSEFKsLgWwH1Lv0ckhkvpG0_My0nSMTAVTatvubKBnn3ogpMpHusOngkccKd2bEJ1DkWGprl5rVYcXwLyuGlLVYsETFXVBOoAzvFYNhsERy9YYme5fMleHah8vG7XVkp_PE-sSxqhfCdmnCX_XfsNzsXcrN21i0ZFajNIcQcTywx9BJyZ5XJU9ppSvdW9lcKw')"></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-lg text-primary">Jewel Tomatoes</h4>
+<span class="font-label-md text-primary">$6.50</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Bursting with summer sweetness and thin skins.</p>
+</div>
+<button class="bg-primary text-on-primary w-full py-4 rounded-full font-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+<!-- Mini Cucumbers Card -->
+<div class="bg-white rounded-[2rem] p-8 organic-shadow flex flex-col gap-6">
+<div class="h-64 rounded-2xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Artistically arranged crisp mini cucumbers on a light wooden surface with water droplets glistening on their skins. The lighting is bright and airy, reflecting a summer breeze mood. The background is a soft-focus minimalist kitchen. Colors include vegetal greens and cucumbers green with a cucumber-fresh vibe. High-end lifestyle photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDj-qX-KMzIHgcUzd5IhNfFyds2d0uM-YGbbvt6OOEbHlgLYE24cBstFK-XD5zRHoF8hLU29AKzIoSWxHmnqFPA_5HkE2HbURs1uYoxXMLsP5Z7V18jgO6r3gk3lDisr7otvyYK3R1GS8Q_TRNSpp9Gz0K5qbbQb3OI3Dg5SPFdtMZ2l4sdqQ3X4a8dPPbPRnk137bAZTIvbzziwLNfH_f8Mub81VD2GsDI8mpUOGsX8R95B8PPKxbdwSGEg5fSIjqczrULbpXAaxc')"></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-lg text-primary">Crisp Minis</h4>
+<span class="font-label-md text-primary">$5.00</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Extra crunchy and refreshing, perfect for midday dips.</p>
+</div>
+<button class="bg-primary text-on-primary w-full py-4 rounded-full font-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+<!-- Snack Peppers Card -->
+<div class="bg-white rounded-[2rem] p-8 organic-shadow flex flex-col gap-6">
+<div class="h-64 rounded-2xl overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Vibrant orange and yellow snack peppers stacked in an asymmetrical, modern arrangement on a warm white stone platter. The lighting is diffused and natural, highlighting the smooth texture of the peppers. The overall style is soft minimalism with an editorial edge. Deep vegetal greens provide a natural warmth to the surrounding aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7Q1E-iV9lJk_COO00JMNnBmxWvqYsYu2xK0NBirljmnOllfdLT42iJPuAnEZS67Ll-Hyt4ngE32c79W4y8GPeo0MALU0EA_FOfE_KAgHHGIrYYhHX53kWy0e4g8e07KL-rWYbdBdA4-xlSRUV9xuwlmJK81-xRaEpr0lSHZ8PeCSG-wNuneHfHBR-9Xe2qJzEDi2G-UaCZcZeoUn8RdKLNn1qrjTLTVzrzB8VHhYt2uQVwFAa1jc3Q8Q23ZMzV2CmS9TDVXoctSY')"></div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-start">
+<h4 class="font-headline-lg text-primary">Sweet Peppers</h4>
+<span class="font-label-md text-primary">$7.25</span>
+</div>
+<p class="text-on-surface-variant font-body-md">Mildly sweet with zero heat, a favorite for kids and busy pros.</p>
+</div>
+<button class="bg-primary text-on-primary w-full py-4 rounded-full font-label-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                        Add to Cart
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Snacking Moments -->
+<section class="py-section-gap px-margin-mobile bg-white">
+<div class="max-w-container-max mx-auto space-y-12">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-center">Moments to Verdo</h3>
+<div class="grid grid-cols-1 gap-6">
+<!-- Moment 1 -->
+<div class="flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low">
+<div class="w-16 h-16 rounded-full border border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">directions_run</span>
+</div>
+<div>
+<h5 class="font-headline-lg text-[20px] text-primary">Quick Boost</h5>
+<p class="text-on-surface-variant text-sm">Fuel your workout with clean energy.</p>
+</div>
+</div>
+<!-- Moment 2 -->
+<div class="flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low">
+<div class="w-16 h-16 rounded-full border border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">laptop_mac</span>
+</div>
+<div>
+<h5 class="font-headline-lg text-[20px] text-primary">Desk Essential</h5>
+<p class="text-on-surface-variant text-sm">Say goodbye to the afternoon slump.</p>
+</div>
+</div>
+<!-- Moment 3 -->
+<div class="flex items-center gap-6 p-6 rounded-2xl bg-surface-container-low">
+<div class="w-16 h-16 rounded-full border border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[32px]">terrain</span>
+</div>
+<div>
+<h5 class="font-headline-lg text-[20px] text-primary">Daily Adventure</h5>
+<p class="text-on-surface-variant text-sm">Resealable packs for life on the go.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-12 bg-surface-container-low dark:bg-surface-dim">
+<div class="px-margin-mobile max-w-container-max mx-auto flex flex-col gap-12">
+<div class="space-y-6">
+<span class="font-headline-lg text-headline-lg text-primary">VERDO</span>
+<p class="font-body-md text-on-surface-variant max-w-xs">Elevating the everyday snack into a moment of pure vitality.</p>
+</div>
+<div class="grid grid-cols-2 gap-8">
+<div class="space-y-4">
+<h6 class="font-label-md text-primary">EXPLORE</h6>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li>Our Story</li>
+<li>Products</li>
+<li>Recipes</li>
+<li>Sustainability</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h6 class="font-label-md text-primary">HELP</h6>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li>Contact</li>
+<li>Shipping</li>
+<li>Wholesale</li>
+<li>FAQ</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant flex flex-col gap-4">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary">face_nod</span>
+<span class="material-symbols-outlined text-primary">photo_camera</span>
+<span class="material-symbols-outlined text-primary">alternate_email</span>
+</div>
+<p class="font-label-md text-on-surface-variant opacity-60">© 2024 VERDO. Fresh Moments. Every Day.</p>
+</div>
+</div>
+</footer>
+<!-- FAB for quick shop -->
+<button class="fixed bottom-8 right-margin-mobile z-40 bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center organic-shadow transition-transform active:scale-90">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+<script>
+        // Micro-interaction for scroll fade
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'ease-out', 'opacity-0', 'translate-y-8');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
